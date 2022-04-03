@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serv
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: serv
+  template:
+    metadata:
+      labels:
+        name: serv
+    spec:
+      containers:
+      - name: serv
+        image: serv
+        imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: serv-entry
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    name: serv
+  ports:
+  - port: 3000
+    targetPort: 8080
+    nodePort: 30001
