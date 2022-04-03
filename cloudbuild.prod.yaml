@@ -33,4 +33,4 @@ substitutions:
     _SERVICE_PROJECT  : weatherserv-staging
     _SERVICE_NAME     : weatherservice-staging
     _DOCKER_REGISTRY  : deuce-docker-repo
-    _DOCKER_IMAGENAME : myapp-prod
+    _DOCKER_IMAGENAME : DockerFile
