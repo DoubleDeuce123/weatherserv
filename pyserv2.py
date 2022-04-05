@@ -31,7 +31,7 @@ def result():
     mgr = owm.weather_manager()
     observation = mgr.weather_at_place(session['Oras'])
     w = observation.weather
-    answer="In "+session["Oras"]+" este "+str(w.detailed_status)+".\nTemperatura(C): "+str(w.temperature('celsius')["temp"])+'''
+    answer="In "+session["Oras"]+" este "+str(w.detailed_status)+".\nTemperatura !!!(C): "+str(w.temperature('celsius')["temp"])+'''
         <form method="post">
             <p><input type=text name=Oras>
             <p><input type=submit value=Submit>
